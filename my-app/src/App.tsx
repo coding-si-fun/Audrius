@@ -1,15 +1,7 @@
 import { Grid, GridItem, Box } from "@chakra-ui/react";
 import MenuButtons from "./custom-components/MenuButtons";
-import NavBar from "./custom-components/NavBar";
-import { BrowserRouter, RouterProvider as Router, Route, Routes, createBrowserRouter, RouterProvider } from 'react-router-dom';
-import ProductPage from "./custom-components/ProductPage";
+import NavBar from "./custom-components/NavBar"
 
-// const router = createBrowserRouter([
-//   {
-//     path: '/',
-//     element: <ProductPage />
-//   }
-// ])
 export default function App() {
   return (
     <>
@@ -31,7 +23,7 @@ export default function App() {
       >
         {/* Header */}
         <GridItem area="header" >
-          <NavBar />
+          <NavBar category="MENIU" />
         </GridItem>
 
         {/* Sidebar (Visible only on lg screens) */}
@@ -69,13 +61,6 @@ export default function App() {
           <Box color="white" textAlign="center">Footer</Box>
         </GridItem>
       </Grid>
-      {/* <Router>
-        <Routes>
-          <Route path='/' element={<h2>dsfdsf</h2>} />
-          <Route path='/sodo-nameliai' element={<h2>dsfdsf</h2>} />
-        </Routes>
-      </Router> */}
-      {/* <RouterProvider router={router} /> */}
     </>
   );
 }
