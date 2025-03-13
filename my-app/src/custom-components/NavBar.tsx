@@ -2,11 +2,12 @@ import { HStack, Image, Text } from "@chakra-ui/react";
 import logo from '../assets/logo/logo.png';
 import ColorMode from "./ColorMode";
 
-type NavbarProps ={
-    category:string
+type NavbarProps = {
+    category: string
+
 }
 
-const NavBar = ({category}:NavbarProps) => {
+const NavBar = ({ category }: NavbarProps) => {
 
     return (
         <HStack justifyContent="space-between" px="12px">
