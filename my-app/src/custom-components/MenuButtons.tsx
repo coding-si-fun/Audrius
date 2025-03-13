@@ -2,10 +2,10 @@ import { SimpleGrid } from '@chakra-ui/react'
 import CardForButton from './CardForButton'
 import SodoNameliai from "../assets/menu-photos/sodo-nameliai.webp"
 import LaukoBaldai from "../assets/menu-photos/Lauko-baldai.webp"
-import Pavesine from "../assets/menu-photos/pavesinė.webp"
+import Pavesine from "../assets/menu-photos/pavesine.webp"
 import SunsBudos from "../assets/menu-photos/suns-budos.webp"
 import ZaidimuNameliai from "../assets/menu-photos/zaidimu-namelaiai.webp"
-import Supynes from '../assets/menu-photos/supynės.webp'
+import Supynes from '../assets/menu-photos/supynes.webp'
 
 const MenuButtons = () => {
     return (
@@ -16,7 +16,6 @@ const MenuButtons = () => {
             <CardForButton href="/suns-budos" imageSrc={SunsBudos} title={"Šuns būdos"} />
             <CardForButton href="/zaidimu-nameliai" imageSrc={ZaidimuNameliai} title={"Žaidimų nameliai"} />
             <CardForButton href="/supynes" imageSrc={Supynes} title={"Supynės"} />
-
         </SimpleGrid>
     )
 }
