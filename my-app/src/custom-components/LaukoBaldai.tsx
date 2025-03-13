@@ -5,7 +5,7 @@ import NavBar from './NavBar';
 const LaukoBaldai = () => {
     const categoryName = "Lauko baldai"
     const sodoNameliai = [
-        '/photos/lauko-baldai/1.jpg',
+        '/assets/photos/lauko-baldai/1.jpg',
         '/photos/lauko-baldai/2.jpg',
         '/photos/lauko-baldai/3.jpg',
         '/photos/lauko-baldai/4.jpg',
