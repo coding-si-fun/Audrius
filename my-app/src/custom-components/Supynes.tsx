@@ -3,10 +3,10 @@ import { Box, Image } from '@chakra-ui/react';
 import NavBar from './NavBar';
 
 const Supynes = () => {
-    const categoryName="Supynės"
+    const categoryName = "Supynės"
 
     const sodoNameliai = [
-        '../../public/photos/supynes/1.jpg',
+        '/photos/supynes/1.jpg',
 
 
     ]
