@@ -1,12 +1,10 @@
 import { Box, Image } from '@chakra-ui/react';
 import NavBar from './NavBar';
-import laukoBaldas_1 from "../assets/photos/lauko-baldai/1.jpg"
-
 
 const LaukoBaldai = () => {
-    const categoryName = "Lauko baldai"
+    const categoryName = "Lauko baldai";
     const sodoNameliai = [
-        '/lauko-baldai/1.jpg',
+        '/photos/lauko-baldai/1.jpg',
         '/photos/lauko-baldai/2.jpg',
         '/photos/lauko-baldai/3.jpg',
         '/photos/lauko-baldai/4.jpg',
@@ -33,8 +31,8 @@ const LaukoBaldai = () => {
         '/photos/lauko-baldai/25.jpg',
         '/photos/lauko-baldai/26.jpg',
         '/photos/lauko-baldai/27.jpg',
+    ];
 
-    ]
     return (
         <Box>
             <NavBar category={categoryName} />
@@ -42,12 +40,10 @@ const LaukoBaldai = () => {
                 {sodoNameliai.map((path, index) => (
                     <Image key={index} loading="lazy" maxW="500px" src={path} alt={"Sodo Namelis"} />
                 ))}
-                <Image src={laukoBaldas_1}></Image>
+                <Image src="/photos/lauko-baldai/1.jpg" alt="Lauko Baldai" />
             </Box>
         </Box>
     );
 };
 
-
-export default LaukoBaldai
-
+export default LaukoBaldai;
