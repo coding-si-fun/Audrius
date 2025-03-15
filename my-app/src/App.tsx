@@ -1,6 +1,7 @@
 import { Grid, GridItem, Box } from "@chakra-ui/react";
 import MenuButtons from "./custom-components/MenuButtons";
 import NavBar from "./custom-components/NavBar"
+import SideBar from "./custom-components/SideBar";
 
 export default function App() {
   return (
@@ -33,7 +34,7 @@ export default function App() {
 
           display={{ base: "none", lg: "block" }}
         >
-          <Box color="white" textAlign="center">Sidebar</Box>
+          <SideBar />
         </GridItem>
 
         {/* Menu (Visible only on small screens) */}
