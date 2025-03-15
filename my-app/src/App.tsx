@@ -1,4 +1,4 @@
-import { Grid, GridItem, Box } from "@chakra-ui/react";
+import { Grid, GridItem, Box, Link, HStack } from "@chakra-ui/react";
 import MenuButtons from "./custom-components/MenuButtons";
 import NavBar from "./custom-components/NavBar"
 import SideBar from "./custom-components/SideBar";
@@ -6,7 +6,6 @@ import MainArea from "./custom-components/MainArea";
 import { useState } from "react";
 
 export default function App() {
-
   const [images, setImages] = useState("")
   return (
     <>
@@ -20,7 +19,7 @@ export default function App() {
              "footer footer"`
         }}
         gridTemplateRows="50px 1fr 30px"
-        gridTemplateColumns={{ base: "1fr", lg: "200px 1fr" }}
+        gridTemplateColumns={{ base: "1fr", lg: "300px 1fr" }}
         // bg="red.800"
         height="100vh"
         gap={2}  // Adjust the gap between grid items for better spacing
@@ -55,16 +54,31 @@ export default function App() {
         {/* Main Content (Visible only on large screens) */}
         <GridItem
           area="main"
-          // bg="red.800"
           display={{ base: "none", lg: "block" }}
         >
           <MainArea gotImages={images} />
         </GridItem>
-
         {/* Footer */}
-        <GridItem area="footer" bg="red.400">
-          <Box color="white" textAlign="center">Footer</Box>
+        <GridItem area="footer">
+          <HStack justify={"center"} w="full" p={4} bg="black">
+            <Link
+              href="/apie-mus"
+              bg="white"
+              color="black"
+              p={2}
+              mb={2}
+              borderRadius="md"
+              _hover={{
+                bg: "gray.700", // Changes background color when hovered
+                textDecoration: "none", // Removes underline
+              }}
+            >
+              Apie mus
+            </Link>
+
+          </HStack>
         </GridItem>
+
       </Grid>
     </>
   );

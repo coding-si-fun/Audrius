@@ -13,7 +13,7 @@ const NavBar = ({ category }: NavbarProps) => {
         <HStack justifyContent="space-between" px="12px">
             <Image src={logo} boxSize="64px" borderRadius="100%" />
             <Text fontFamily="monospace"
-                color="blue.600"
+                // color="blue.600"
                 letterSpacing="wide"
                 fontSize="2xl">{category}
             </Text>

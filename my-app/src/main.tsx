@@ -10,6 +10,7 @@ import ZaidimuNameliai from './custom-components/zaidimuNameliai.tsx';
 import Pavesines from './custom-components/Pavesines.tsx';
 import Supynes from './custom-components/Supynes.tsx';
 import MainArea from './custom-components/MainArea.tsx';
+import ApieMus from './custom-components/ApieMus.tsx';
 
 
 const router = createBrowserRouter([
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
   {
     path: "/main/:category",
     element: <MainArea gotImages={""} />
+  },
+  {
+    path: "/apie-mus",
+    element: <ApieMus />
   }
 ])
 createRoot(document.getElementById('root')!).render(

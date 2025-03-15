@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { sodoNameliai } from "./SodoNameliai"; // Assuming this is an array of images or data.
+import { useEffect, useState } from "react";
+import { sodoNameliai } from "./SodoNameliai";
 import { LaukoBaldaiUrls } from "./LaukoBaldai";
 import { pavesines } from "./Pavesines";
 import { sunsBudos } from "./SunsBudos";
 import { zaidimuNameliai } from "./zaidimuNameliai";
 import { supynes } from "./Supynes";
-import { Box, Flex, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Image } from "@chakra-ui/react";
 
 
 interface Props {
@@ -46,8 +46,7 @@ const MainArea = ({ gotImages }: Props) => {
     const imagesToRender = Images.length > 0 ? Images : sodoNameliai;
 
     return (
-        <Flex justify="center" align="center" >
-      
+        <Flex justify="center" align="center">
             <Box mt="12px">
                 {imagesToRender.length > 0 ? (
                     imagesToRender.map((image, index) => (

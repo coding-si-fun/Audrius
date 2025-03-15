@@ -21,15 +21,11 @@ const SodoNameliai = () => {
     const categoryName = "Sodo Nameliai";
 
     return (
-        <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" minHeight="100vh">
-            <VStack>
+        <Box>
             <NavBar category={categoryName} />
-            
-            </VStack>
-
             <Box className="image-gallery" mt="12px">
                 {/* This is a flex container for the images */}
-                <SimpleGrid columns={[1, 2, 3]} spacing={4} justifyItems="center">
+                <SimpleGrid justifyItems="center">
                     {sodoNameliai.map((path, index) => (
                         <Box key={index}>
                             <Image
