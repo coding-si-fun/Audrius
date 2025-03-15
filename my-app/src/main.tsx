@@ -9,6 +9,7 @@ import SunsBudos from './custom-components/SunsBudos.tsx';
 import ZaidimuNameliai from './custom-components/zaidimuNameliai.tsx';
 import Pavesines from './custom-components/Pavesines.tsx';
 import Supynes from './custom-components/Supynes.tsx';
+import MainArea from './custom-components/MainArea.tsx';
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: "/supynes",
     element: <Supynes />
+  },
+  {
+    path: "/main/:category",
+    element: <MainArea gotImages={""} />
   }
 ])
 createRoot(document.getElementById('root')!).render(

@@ -12,7 +12,11 @@ const NavBar = ({ category }: NavbarProps) => {
     return (
         <HStack justifyContent="space-between" px="12px">
             <Image src={logo} boxSize="64px" borderRadius="100%" />
-            <Text fontSize={"2xl"}>{category}</Text>
+            <Text fontFamily="monospace"
+                color="blue.600"
+                letterSpacing="wide"
+                fontSize="2xl">{category}
+            </Text>
 
             {/* Display formatted category name */}
 

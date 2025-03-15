@@ -1,11 +1,14 @@
 import { Box, Image } from '@chakra-ui/react';
 
 import NavBar from './NavBar';
+export const supynes = [
+    '/photos/supynes/1.jpg',
+]
 
 const Supynes = () => {
     const categoryName = "Supynės"
 
-    const sodoNameliai = [
+    const supynes = [
         '/photos/supynes/1.jpg',
 
 
@@ -14,7 +17,7 @@ const Supynes = () => {
         <Box>
             <NavBar category={categoryName} />
             <Box className="image-gallery" mt={"12px"}>
-                {sodoNameliai.map((path, index) => (
+                {supynes.map((path, index) => (
                     <Image key={index} loading="lazy" maxW="500px" src={path} alt={"Supynė"} />
                 ))}
             </Box>

@@ -2,8 +2,12 @@ import { Grid, GridItem, Box } from "@chakra-ui/react";
 import MenuButtons from "./custom-components/MenuButtons";
 import NavBar from "./custom-components/NavBar"
 import SideBar from "./custom-components/SideBar";
+import MainArea from "./custom-components/MainArea";
+import { useState } from "react";
 
 export default function App() {
+
+  const [images, setImages] = useState("")
   return (
     <>
       <Grid
@@ -24,17 +28,17 @@ export default function App() {
       >
         {/* Header */}
         <GridItem area="header" >
-          <NavBar category="MENIU" />
+          <NavBar category="Audrius: +37063599672" />
         </GridItem>
 
         {/* Sidebar (Visible only on lg screens) */}
         <GridItem
           area="sidebar"
-          bg="green.400"
+          // bg="green.400"
 
           display={{ base: "none", lg: "block" }}
         >
-          <SideBar />
+          <SideBar onSetImages={setImages} />
         </GridItem>
 
         {/* Menu (Visible only on small screens) */}
@@ -51,10 +55,10 @@ export default function App() {
         {/* Main Content (Visible only on large screens) */}
         <GridItem
           area="main"
-          bg="red.800"
+          // bg="red.800"
           display={{ base: "none", lg: "block" }}
         >
-          <Box color="white" textAlign="center">Main</Box>
+          <MainArea gotImages={images} />
         </GridItem>
 
         {/* Footer */}
