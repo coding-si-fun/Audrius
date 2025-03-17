@@ -73,7 +73,7 @@
 // export default SodoNameliai;
 
 
-import { Box, Button, Image, SimpleGrid, Link, HStack, Spinner } from '@chakra-ui/react';
+import { Box, Button, Image, SimpleGrid, Link, HStack, Spinner, Center } from '@chakra-ui/react';
 import NavBar from './NavBar';
 import { useNavigate } from 'react-router-dom';
 import { IoChevronBack } from 'react-icons/io5';
@@ -97,18 +97,14 @@ export const sodoNameliai = [
 
 const SodoNameliai = () => {
     const categoryName = "Sodo Nameliai";
-    const navigate = useNavigate();
-    const [loadedImages, setLoadedImages] = useState(new Array(sodoNameliai.length).fill(false));
+    const [loading, setLoading] = useState(true); // Track the loading state
+    const navigate = useNavigate(); // Hook for navigation
 
-    // Function to mark an image as loaded
-    const handleImageLoad = (index: number) => {
-        setLoadedImages((prev) => {
-            const newLoaded = [...prev];
-            newLoaded[index] = true;
-            return newLoaded;
-        });
+    const handleImageLoad = () => {
+        setLoading(false); // Set loading to false once images are loaded
+        // const [loadedImages, setLoadedImages] = useState(new Array(SodoNameliai.length).fill(false));
+
     };
-
     return (
         <Box>
             <NavBar category={categoryName} />
@@ -118,12 +114,15 @@ const SodoNameliai = () => {
                 </Button>
             </Box>
             <Box className="image-gallery" mt="12px">
+                {loading && (
+                    <Center h="100vh">
+                        <Spinner size="xl" color="teal.500" />
+                    </Center>
+                )}
                 <SimpleGrid justifyItems="center">
                     {sodoNameliai.map((path, index) => (
                         <Box key={index} position="relative">
-                            {!loadedImages[index] && (
-                                <Spinner size="xl" color="gray.500" position="absolute" left="50%" top="50%" transform="translate(-50%, -50%)" />
-                            )}
+
                             <Image
                                 loading="lazy"
                                 w="500px"
@@ -133,9 +132,10 @@ const SodoNameliai = () => {
                                 boxShadow="md"
                                 display="block"
                                 margin="0 auto"
-                                onLoad={() => handleImageLoad(index)} // Fires when image is fully loaded
-                                opacity={loadedImages[index] ? 1 : 0} // Hide image until it's loaded
+                                onLoad={handleImageLoad} // Fires when image is fully loaded
                                 transition="opacity 0.3s ease-in-out"
+
+                                // transition="opacity 0.3s ease-in-out"
                                 py="4px"
                                 shadow="sm"
                             />
