@@ -66,7 +66,7 @@ const LaukoBaldai = () => {
                             src={path}
                             alt={`Lauko Baldai ${index}`}
                             style={{ display: "block", margin: "0 auto" }}
-                            onLoad={() => handleImageLoad(index)} // Trigger when image is loaded
+                            onLoad={() => handleImageLoad()} // Trigger when image is loaded
                             // opacity={loadedImages[index] ? 1 : 0} // Hide image until loaded
                             transition="opacity 0.3s ease-in-out" // Smooth transition for opacity
                             py="6px"
