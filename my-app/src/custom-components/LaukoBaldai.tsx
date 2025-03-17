@@ -41,7 +41,7 @@ const LaukoBaldai = () => {
     // State to track loaded images
     const [loadedImages, setLoadedImages] = useState(new Array(LaukoBaldaiUrls.length).fill(false));
 
-    const handleImageLoad = (index) => {
+    const handleImageLoad = (index:number) => {
         setLoadedImages((prev) => {
             const newLoaded = [...prev];
             newLoaded[index] = true;

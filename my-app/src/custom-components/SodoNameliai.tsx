@@ -101,7 +101,7 @@ const SodoNameliai = () => {
     const [loadedImages, setLoadedImages] = useState(new Array(sodoNameliai.length).fill(false));
 
     // Function to mark an image as loaded
-    const handleImageLoad = (index) => {
+    const handleImageLoad = (index: number) => {
         setLoadedImages((prev) => {
             const newLoaded = [...prev];
             newLoaded[index] = true;
