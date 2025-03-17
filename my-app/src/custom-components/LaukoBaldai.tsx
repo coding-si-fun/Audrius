@@ -1,7 +1,8 @@
-import { Box, Button, HStack, Image, Link } from '@chakra-ui/react';
+import { Box, Button, HStack, Image, Link, Spinner } from '@chakra-ui/react';
 import { IoChevronBack } from "react-icons/io5";
 import NavBar from './NavBar';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 export const LaukoBaldaiUrls = [
     '/photos/lauko-baldai/1.jpg',
@@ -35,17 +36,44 @@ export const LaukoBaldaiUrls = [
 
 const LaukoBaldai = () => {
     const categoryName = "Lauko baldai";
-    const navigate = useNavigate(); // Hook for navigation
+    const navigate = useNavigate();
+
+    // State to track loaded images
+    const [loadedImages, setLoadedImages] = useState(new Array(LaukoBaldaiUrls.length).fill(false));
+
+    const handleImageLoad = (index) => {
+        setLoadedImages((prev) => {
+            const newLoaded = [...prev];
+            newLoaded[index] = true;
+            return newLoaded;
+        });
+    };
+
     return (
         <Box>
             <NavBar category={categoryName} />
             <Box px={1} mt={2}>
                 <Button onClick={() => navigate("/")}>
-                    <IoChevronBack /></Button>
+                    <IoChevronBack />
+                </Button>
             </Box>
             <Box className="image-gallery" mt={"12px"}>
                 {LaukoBaldaiUrls.map((path, index) => (
-                    <Image key={index} loading="lazy" w="500px" src={path} alt={"Lauko Baldai" + index} style={{ display: "block", margin: "0 auto" }} />
+                    <Box key={index} position="relative" textAlign="center">
+                        {!loadedImages[index] && (
+                            <Spinner size="xl" color="gray.500" position="absolute" left="50%" top="50%" transform="translate(-50%, -50%)" />
+                        )}
+                        <Image
+                            loading="lazy"
+                            w="500px"
+                            src={path}
+                            alt={`Lauko Baldai ${index}`}
+                            style={{ display: "block", margin: "0 auto" }}
+                            onLoad={() => handleImageLoad(index)}
+                            opacity={loadedImages[index] ? 1 : 0} // Hide image until loaded
+                            transition="opacity 0.3s ease-in-out"
+                        />
+                    </Box>
                 ))}
             </Box>
             <HStack justify={"center"} w="full" p={4} bg="black">
@@ -57,13 +85,12 @@ const LaukoBaldai = () => {
                     mb={2}
                     borderRadius="md"
                     _hover={{
-                        bg: "gray.700", // Changes background color when hovered
-                        textDecoration: "none", // Removes underline
+                        bg: "gray.700",
+                        textDecoration: "none",
                     }}
                 >
                     Apie mus
                 </Link>
-
             </HStack>
         </Box>
     );
