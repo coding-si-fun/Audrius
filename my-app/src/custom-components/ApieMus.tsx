@@ -2,7 +2,7 @@ import { VStack, Text, Box, Button } from "@chakra-ui/react"
 import NavBar from "./NavBar"
 import { Heading } from "@chakra-ui/react"
 import { IoChevronBack } from "react-icons/io5"
-import { useNavigate, useNavigation } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const ApieMus = () => {
     const navigator = useNavigate()

@@ -118,7 +118,7 @@ const SodoNameliai = () => {
                 </Button>
             </Box>
             <Box className="image-gallery" mt="12px">
-                <SimpleGrid justifyItems="center" spacing={4}>
+                <SimpleGrid justifyItems="center">
                     {sodoNameliai.map((path, index) => (
                         <Box key={index} position="relative">
                             {!loadedImages[index] && (

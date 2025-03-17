@@ -3,6 +3,7 @@ import NavBar from './NavBar';
 import { IoChevronBack } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 import { Link } from "@chakra-ui/react";
+import { useState } from 'react';
 
 export const zaidimuNameliai = [
     '/photos/zaidimu-nameliai/1.jpg',
@@ -11,8 +12,8 @@ export const zaidimuNameliai = [
 ];
 
 const ZaidimuNameliai = () => {
-    const categoryName = "Žaidimų Nameliai";
-    const [loading, setLoading] = React.useState(true); // Track the loading state
+    const categoryName = "Žaidimų nameliai";
+    const [loading, setLoading] = useState(true); // Track the loading state
     const navigate = useNavigate(); // Hook for navigation
 
     const handleImageLoad = () => {

@@ -55,7 +55,7 @@ const MainArea = ({ gotImages }: Props) => {
             <Box mt="12px">
                 {imagesToRender.length > 0 ? (
                     imagesToRender.map((image, index) => (
-                        <Image key={index} maxW="500px" src={image} alt={splitAndCapitalize(gotImages) + "-" + index} />
+                        <Image key={index} maxW="500px" src={image} alt={splitAndCapitalize(gotImages) + "-" + index} py="4px" boxShadow="sm" borderRadius="md"/>
                     ))
                 ) : (
                     <p>No images to display</p>
