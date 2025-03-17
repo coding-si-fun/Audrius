@@ -10,8 +10,8 @@ import Supynes from '../assets/menu-photos/supynes.webp'
 const MenuButtons = () => {
     return (
         <SimpleGrid columns={2} gap="10px" px={4}>
-            <CardForButton href="/sodo-nameliai" imageSrc={SodoNameliai} title={"Sodo Namelaiai"} />
-            <CardForButton href="/lauko-baldai" imageSrc={LaukoBaldai} title={"Lauko Baldai"} />
+            <CardForButton href="/sodo-nameliai" imageSrc={SodoNameliai} title={"Sodo namelaiai"} />
+            <CardForButton href="/lauko-baldai" imageSrc={LaukoBaldai} title={"Lauko baldai"} />
             <CardForButton href="/pavesines" imageSrc={Pavesine} title={"Pavėsinės"} />
             <CardForButton href="/suns-budos" imageSrc={SunsBudos} title={"Šuns būdos"} />
             <CardForButton href="/zaidimu-nameliai" imageSrc={ZaidimuNameliai} title={"Žaidimų nameliai"} />
