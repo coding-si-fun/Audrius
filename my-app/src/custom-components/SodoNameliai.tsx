@@ -136,6 +136,8 @@ const SodoNameliai = () => {
                                 onLoad={() => handleImageLoad(index)} // Fires when image is fully loaded
                                 opacity={loadedImages[index] ? 1 : 0} // Hide image until it's loaded
                                 transition="opacity 0.3s ease-in-out"
+                                py="4px"
+                                shadow="sm"
                             />
                         </Box>
                     ))}

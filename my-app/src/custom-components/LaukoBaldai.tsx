@@ -12,7 +12,7 @@ export const LaukoBaldaiUrls = [
     '/photos/lauko-baldai/5.jpg',
     '/photos/lauko-baldai/6.jpg',
     '/photos/lauko-baldai/7.jpg',
-    '/photos/lauko-baldai/8.jpg',
+    // '/photos/lauko-baldai/8.jpg',
     '/photos/lauko-baldai/9.jpg',
     '/photos/lauko-baldai/10.jpg',
     '/photos/lauko-baldai/11.jpg',
@@ -41,7 +41,7 @@ const LaukoBaldai = () => {
     // State to track loaded images
     const [loadedImages, setLoadedImages] = useState(new Array(LaukoBaldaiUrls.length).fill(false));
 
-    const handleImageLoad = (index:number) => {
+    const handleImageLoad = (index: number) => {
         setLoadedImages((prev) => {
             const newLoaded = [...prev];
             newLoaded[index] = true;
@@ -72,6 +72,9 @@ const LaukoBaldai = () => {
                             onLoad={() => handleImageLoad(index)}
                             opacity={loadedImages[index] ? 1 : 0} // Hide image until loaded
                             transition="opacity 0.3s ease-in-out"
+                            py="6px"
+                            shadow="sm"
+
                         />
                     </Box>
                 ))}
