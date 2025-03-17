@@ -1,13 +1,19 @@
-import { VStack, Text, Box } from "@chakra-ui/react"
+import { VStack, Text, Box, Button } from "@chakra-ui/react"
 import NavBar from "./NavBar"
 import { Heading } from "@chakra-ui/react"
+import { IoChevronBack } from "react-icons/io5"
+import { useNavigate, useNavigation } from "react-router-dom"
 
 const ApieMus = () => {
+    const navigator = useNavigate()
     return (
         <>
             <NavBar category={"Audrius: +37063599672"} />
+            <Box px={1} mt={2}>
+                <Button onClick={() => navigator("/")}>
+                    <IoChevronBack /></Button>
+            </Box>
             <VStack>
-
                 <Heading size="3xl" letterSpacing="wide">Apie mus</Heading>
                 <Box p={4}>
                     <Text>

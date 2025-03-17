@@ -43,14 +43,19 @@ const MainArea = ({ gotImages }: Props) => {
         }
     }, [gotImages]);
 
+    const splitAndCapitalize = (gotImages: string) => {
+        let words = gotImages.replace(/([A-Z])/g, " $1").trim(); // Split by capital letters
+        return words.charAt(0).toUpperCase() + words.slice(1).toLowerCase(); // Capitalize only the first word
+    };
+
     const imagesToRender = Images.length > 0 ? Images : sodoNameliai;
 
     return (
-        <Flex justify="center" align="center">
+        <Flex justify="center">
             <Box mt="12px">
                 {imagesToRender.length > 0 ? (
                     imagesToRender.map((image, index) => (
-                        <Image key={index} maxW="500px" src={image} alt={`image-${index}`} />
+                        <Image key={index} maxW="500px" src={image} alt={splitAndCapitalize(gotImages) + "-" + index} />
                     ))
                 ) : (
                     <p>No images to display</p>
